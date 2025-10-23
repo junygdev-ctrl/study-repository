@@ -3,13 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Join{
-    List<String> list;
+    List<String> list = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
 
-    Join(List<String> list){
-        this.list = list;
-    }
     void add(){
         while(true) {
             System.out.print("추가할 닉네임을 입력하시오 : ");
@@ -44,8 +41,7 @@ class Join{
 }
 public class Main{
     public static void main(String[] args){
-        List<String> nickNameList = new ArrayList<>();
-        Join jn = new Join(nickNameList);
+        Join jn = new Join();
         jn.add();        // 첫번째 닉네임 추가
         jn.add();        // 두번째 닉네임 추가
         jn.remove();     // 닉네임 삭제
