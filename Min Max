@@ -1,0 +1,46 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Evaluator eval = new Evaluator();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(br.readLine());
+        eval.evaluate(st);
+        br.close();
+    }
+}
+
+class Evaluator {
+    public void evaluate(StringTokenizer st) {
+        if (!st.hasMoreTokens()) {  // case 0
+            return;
+        }
+        int Max = Integer.parseInt(st.nextToken());
+        int Min = Max;
+
+        if (!st.hasMoreTokens()) {  // case 1
+            System.out.printf("%d %d", Min, Max);
+            return;
+        }
+        Min = Integer.parseInt(st.nextToken());
+
+        if (Max < Min) {
+            int T = Max;
+            Max = Min;
+            Min = T;
+        }
+        while (st.hasMoreTokens()) {
+            int hold = Integer.parseInt(st.nextToken());
+            if (Min > hold) {
+                Min = hold;
+            } else if (Max < hold) {
+                Max = hold;
+            }
+        }
+        System.out.printf("%d %d", Min, Max);
+    }
+}
