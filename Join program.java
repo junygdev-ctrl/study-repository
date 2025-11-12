@@ -39,7 +39,7 @@ class Join{
         System.out.print(list);
     }
 }
-public class Main{
+public class JoinProgram{
     public static void main(String[] args){
         Join jn = new Join();
         jn.add();        // 첫번째 닉네임 추가
