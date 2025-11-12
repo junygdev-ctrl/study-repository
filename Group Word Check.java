@@ -17,7 +17,6 @@ public class Main {
             System.out.print(groupWordCount);
         } catch (IOException | NumberFormatException e) {
             System.out.print(e.getMessage());
-
         }
     }
 }
