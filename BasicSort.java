@@ -6,11 +6,11 @@ public class Main {
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.print("배열의 각 요솟값을 입력하시오. : ");
-            String[] arr = br.readLine().split(" ");
-            int[] array = new int[arr.length];
+            String[] tempArr = br.readLine().split(" ");
+            int[] arr = new int[tempArr.length];
 
-            for (int i = 0; i < arr.length; i++) {
-                array[i] = Integer.parseInt(arr[i]);
+            for (int i = 0; i < tempArr.length; i++) {
+                arr[i] = Integer.parseInt(tempArr[i]);
             }
 
             System.out.print("정렬 방식을 입력하시오. (선택 정렬: 1, 버블 정렬: 2, 삽입 정렬: 3) : ");
@@ -25,7 +25,7 @@ public class Main {
                 default -> throw new IllegalArgumentException("지원하지 않는 정렬 방식입니다 : " + orderText);
             };
 
-            int[] sortedArray = sortType.getSortedArray(array);
+            int[] sortedArray = sortType.getSortedArray(arr);
 
             for (int element : sortedArray) {
                 sb.append(element).append(" ");
@@ -34,7 +34,7 @@ public class Main {
             System.out.print(sb);
 
         } catch (IOException | IllegalArgumentException e) {
-            System.err.print(e.getMessage());
+            System.err.print("오류 발생: " + e.getMessage());
         }
     }
 }
@@ -115,5 +115,4 @@ class ArrayUtils {
         array[a] = array[b];
         array[b] = temp;
     }
-
 }
