@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class BasicSort {
+public class Main {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
 
@@ -117,4 +117,5 @@ class ArrayUtils {
     }
 
 }
+
 
