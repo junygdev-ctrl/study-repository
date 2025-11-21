@@ -48,7 +48,7 @@ class SelectionSort implements BasicSorts {
     public int[] getSortedArray(int[] arr) {
         int[] array = arr.clone();
         int lastIndex = array.length - 1;
-        // 7 8 5 9
+        
         while (lastIndex > 0) {
             int maxIndex = 0;
             for (int i = 1; i <= lastIndex; i++) {
@@ -116,3 +116,4 @@ class ArrayUtils {
         array[b] = temp;
     }
 }
+
